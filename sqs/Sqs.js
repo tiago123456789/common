@@ -10,8 +10,8 @@ class Sqs {
         sdk.config.update({
             region: process.env.REGION,
             credentials: {
-                secretAccessKey: process.env.SECRET_KEY_AMAZON,
-                accessKeyId: process.env.ACCESS_KEY_AMAZON,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+                accessKeyId: process.env.AWS_SECRET_ACCESS_KEYs,
             }
         });
 
