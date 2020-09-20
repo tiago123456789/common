@@ -14,7 +14,7 @@ class Sqs {
             }
         });
 
-        return new AWS.SQS();
+        return new sdk.SQS();
     }
 
     getSqs() {
