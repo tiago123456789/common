@@ -1,4 +1,4 @@
-module.exports = (error, request, response, next) => {
+module.exports = (request, response, next) => {
     const message = {
         status: 404,
         message: "Sorry! Route not found."

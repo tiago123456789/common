@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tiago123456789/common/issues"
   },
-  "homepage": "https://github.com/tiago123456789/common#readme"
+  "homepage": "https://github.com/tiago123456789/common#readme",
+  "dependencies": {
+    "aws-sdk": "^2.756.0"
+  }
 }
