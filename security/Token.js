@@ -1,3 +1,5 @@
+const jwt = require("jsonwebtoken");
+
 module.exports = {
 
     build(datas) {
