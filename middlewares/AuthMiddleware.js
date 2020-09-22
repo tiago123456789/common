@@ -1,7 +1,5 @@
 const Constantes = require("./../constants/App");
 const httpClient = require("../http/HttpClient");
-const Token = require("./../security/Token");
-const token = new Token();
 
 module.exports = {
 
