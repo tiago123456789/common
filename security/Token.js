@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const Constants = require("../constants/App");
 
 module.exports = {
 
@@ -25,5 +26,9 @@ module.exports = {
                 resolve(value);
             });
         });
+    },
+
+    getWithoutPrefix(token) {
+        return token.replace(Constants.HEADER_PREFIX_TOKEN, "");
     }
 }
