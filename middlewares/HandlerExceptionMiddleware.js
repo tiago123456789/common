@@ -6,6 +6,11 @@ module.exports = (error, request, response, next) => {
                 statusCode: 401,
                 message: error.message
             });
+        case "ForbiddenException":
+            return response.status(403).json({
+                statusCode: 403,
+                message: error.message
+            });
         case "BusinessLogicException": 
             return response.status(409).json({
                 statusCode: 409,
