@@ -12,15 +12,15 @@ module.exports = {
             });
         }
 
-        const result = await httpClient.get(`${process.env.API_AUTH}auth/check`, {
-            [Constantes.HEADER_PARAM_AUTH]: accessToken
-        });
-
-        const isInvalidToken = result.statusCode == 403;
-        if (isInvalidToken) {
-            return next(new SecurityException(result.message));
-        } else {
-            return next();
+        try  {
+            await httpClient.get(`${process.env.API_AUTH}auth/check`, {
+                [Constantes.HEADER_PARAM_AUTH]: accessToken
+            });
+        } catch(error) {
+            const datas = error.response.data;
+            return response.status(datas.statusCode).json(datas);
         }
+
+        return next();
     }
 }
