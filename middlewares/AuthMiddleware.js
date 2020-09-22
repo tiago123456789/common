@@ -14,13 +14,13 @@ module.exports = {
             });
         }
 
-        const response = await httpClient.get(`${process.env.API_AUTH}auth/check`, {
+        const result = await httpClient.get(`${process.env.API_AUTH}auth/check`, {
             [Constantes.HEADER_PARAM_AUTH]: accessToken
         });
 
-        const isInvalidToken = response.statusCode == 403;
+        const isInvalidToken = result.statusCode == 403;
         if (isInvalidToken) {
-            return next(new SecurityException(response.message));
+            return next(new SecurityException(result.message));
         } else {
             return next();
         }
