@@ -5,7 +5,7 @@ const token = new Token();
 
 module.exports = {
 
-    hasPermission(request, response, next) {
+    async hasPermission(request, response, next) {
         const accessToken = request.get(Constantes.HEADER_PARAM_AUTH);
         if (accessToken == null || accessToken.length == 0) {
             return response.status(401).json({
