@@ -4,7 +4,7 @@ const Constants = require("../constants/App");
 module.exports = {
 
     build(datas) {
-        return jwt.sign(datas, process.env.SECRET, { expiresIn: process.env.EXPIRATION_TIME });
+        return jwt.sign(datas, process.env.SECRET, { expiresIn: ((new Date()) / 1000) + process.env.EXPIRATION_TIME });
     },
 
     isValid(token) {
