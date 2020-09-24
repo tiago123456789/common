@@ -1,7 +1,5 @@
 const cache = require("../cache/Cache");
-
-redis = require("redis");
-const redisClient = redis.createClient();
+const rateLimit = require("express-rate-limit");
 const WINDOW_SIZE_IN_HOURS = 24;
 const MAX_WINDOW_REQUEST_COUNT = 110;
 const WINDOW_LOG_INTERVAL_IN_HOURS = 1;
