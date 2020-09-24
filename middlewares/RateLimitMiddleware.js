@@ -66,7 +66,7 @@ module.exports = async (request, response, next) => {
                         requestCount: 1
                     });
                 }
-                cache.set(ip, JSON.stringify(newRecord), rateLimiterUsingThirdParty.windowMs);
+                cache.set(ip, JSON.stringify(record), rateLimiterUsingThirdParty.windowMs);
                 next();
             }
         }
