@@ -48,7 +48,7 @@ module.exports = async (request, response, next) => {
                     .json(
                         {
                             statusCode: 429,
-                            message: rateLimiterUsingThirdParty.message
+                            message: `You have exceeded the numbers requests!`
                         }
                     )
             } else {
