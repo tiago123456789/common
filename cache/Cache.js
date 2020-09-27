@@ -4,7 +4,7 @@ const redis = require("redis");
 class Cache {
 
     constructor() {
-        this._cacheClient = redis.createClient();
+        this._cacheClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
     }
 
     sadd(key, values, timeExpiration) {
