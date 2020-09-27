@@ -27,7 +27,6 @@ module.exports = (error, request, response, next) => {
                 message: JSON.parse(error.message)
             });
         default: 
-            console.log(error);
             return response.status(500).json({
                 statusCode: 500,
                 message: "Internal server error."
